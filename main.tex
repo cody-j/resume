@@ -2,9 +2,9 @@
 
 \usepackage[margin=1cm]{geometry}
 \usepackage{amssymb}
-\usepackage{graphicx}  % For images
-\usepackage{multicol}  % For columns
-\usepackage{wrapfig}   % For wrapping text around images
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{wrapfig}
 \usepackage{tikz}
 \usepackage{pgf}
 \usepackage{multirow}
@@ -16,14 +16,17 @@
 \usepackage{xcolor}
 \usepackage{fontawesome}
 
+% font setup
 \usepackage[T1]{fontenc}
 \usepackage{inter}
 
 \pagenumbering{gobble}
 \raggedright
+
+% Document
 \begin{document}
 
-% COMMANDS
+% Commands
 \newcommand{\header}[1]{%
     \vspace{-0.3em}
     {\tiny\section*{\small{#1}}\vspace{-2.5em}}
@@ -40,6 +43,17 @@
     \hspace{1em}\textbar\hspace{1em}%
     \faGithub\ github.com/cody-j%
     \end{center}
+}
+
+\newcommand{\skillcolumn}[2]{%
+    \begin{minipage}{0.29\textwidth}
+        {\section*{\small\normalfont{#1}}\vspace{-2.0em}}
+        \hrulefill\vspace{0.7em}
+        
+        \begin{flushleft}
+            {#2}
+        \end{flushleft}
+    \end{minipage}%
 }
 
 \newcommand{\pill}[2][gray!10]{%
@@ -67,7 +81,7 @@
     \end{adjustwidth}%
     \vspace{1em}%
 }
-% END COMMANDS
+% End Commands
 
 % HEADER
 \begin{minipage}{0.7\textwidth}
@@ -105,13 +119,23 @@
 
 \contact
 
-% Skills
+% SKILLS
 \header{SKILLS}
 
-\begin{adjustwidth}{0.3cm}{0.2cm}
+\noindent
+\skillcolumn{Frontend}{
     \pill[blue!70]{NODE}%
     \pill[blue!70]{PYTHON}%
-\end{adjustwidth}
+}\hfill%
+\skillcolumn{Backend + Data}{
+    \pill[blue!70]{NODE}%
+    \pill[blue!70]{PYTHON}%
+}\hfill%
+\skillcolumn{Devops}{
+    \pill[blue!70]{NODE}%
+    \pill[blue!70]{PYTHON}%
+}%
+
 
 \vspace{1em}
 
@@ -137,7 +161,6 @@
     \item Integrated track-and-trace system with delivery partners enabling millions of dollars in new business%
 }
 
-% Second Page
 \newpage
 
 % EXPERIENCE (cont'd)
