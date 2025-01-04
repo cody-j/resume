@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{wrapfig}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 \usepackage{pgf}
 \usepackage{multirow}
@@ -13,7 +14,6 @@
 \usepackage{changepage}
 \usepackage{ragged2e}
 \usepackage{tcolorbox}
-\usepackage{xcolor}
 \usepackage{fontawesome}
 
 % font setup
@@ -56,19 +56,21 @@
     \end{minipage}%
 }
 
-\newcommand{\pill}[2][gray!10]{%
-    % \tcbox[nobeforeafter,colback=#1,colframe=#1,left=4pt,right=4pt,top=2pt,bottom=2pt,tcbox raise base]{\textbf{#2}}
+\newcommand{\plainpill}[1]{%
+    {\small\textit{#1}}
+}
+\newcommand{\pill}[2][gray!90]{%
     \tcbox[
         height=0.4cm,
         nobeforeafter,
         valign=center,
         width=fit,
-        colback=#1,
-        colframe=#1,
+        colback=#1!20,
+        colframe=#1!20,
         left=2pt,
         right=2pt,
         boxrule=0pt,
-    ]{\tiny\color{gray!10}\textbf{#2}}
+    ]{\tiny\color{#1}\textbf{#2}}
 }
 
 \newcommand{\experience}[4]{%  % Title, Company, Date, Highlights
@@ -124,16 +126,16 @@
 
 \noindent
 \skillcolumn{Frontend}{
-    \pill[blue!70]{NODE}%
-    \pill[blue!70]{PYTHON}%
+\pill[Violet!90!Black]{NODE}%
+\pill[Violet!90!Black]{PYTHON}%
 }\hfill%
 \skillcolumn{Backend + Data}{
-    \pill[blue!70]{NODE}%
-    \pill[blue!70]{PYTHON}%
+\pill[ForestGreen!40!Black]{NODE}%
+\pill[ForestGreen!40!Black]{PYTHON}%
 }\hfill%
 \skillcolumn{Devops}{
-    \pill[blue!70]{NODE}%
-    \pill[blue!70]{PYTHON}%
+\pill[NavyBlue!90!Black]{NODE}%
+\pill[NavyBlue!90!Black]{PYTHON}%
 }%
 
 
