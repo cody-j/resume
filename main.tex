@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{wrapfig}
+\usepackage{anyfontsize}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 \usepackage{pgf}
@@ -25,7 +26,6 @@
 
 % Document
 \begin{document}
-
 % Commands
 \newcommand{\header}[1]{%
     \vspace{-0.3em}
@@ -47,10 +47,10 @@
 
 \newcommand{\skillcolumn}[2]{%
     \begin{minipage}[t]{0.29\textwidth}
-        \setlength{\baselineskip}{1.4em}
         {\section*{\large\textbf{#1}}\vspace{-2.0em}}
         \hrulefill\vspace{0.3em}
         \begin{flushleft}
+            \setlength{\baselineskip}{1.8em}
             {#2}
         \end{flushleft}
     \end{minipage}%
@@ -61,7 +61,7 @@
 }
 \newcommand{\pill}[2][gray!90]{%
     \tcbox[
-        height=0.4cm,
+        height=0.5cm,
         nobeforeafter,
         valign=center,
         width=fit,
@@ -70,7 +70,7 @@
         left=2pt,
         right=2pt,
         boxrule=0pt,
-    ]{\tiny\color{#1!20!Black}\textbf{#2}}
+    ]{\footnotesize\color{#1!20!Black}\textbf{#2}}
 }
 
 \newcommand{\experience}[5]{%  % Title, Company, Date, Highlights, Blurb
@@ -136,11 +136,11 @@
 \skillcolumn{Backend + Data}{
 \pill[ForestGreen!40!Black]{Node.js}%
 \pill[ForestGreen!40!Black]{TypeScript}%
+\pill[ForestGreen!40!Black]{DBT}%
 \pill[ForestGreen!40!Black]{Express.js}%
-\pill[ForestGreen!40!Black]{Python}%
 \pill[ForestGreen!40!Black]{PostgreSQL}%
 \pill[ForestGreen!40!Black]{Redis}%
-\pill[ForestGreen!40!Black]{DBT}%
+\pill[ForestGreen!40!Black]{Python}%
 \pill[ForestGreen!40!Black]{Couchbase}%
 }\hfill%
 \skillcolumn{Devops}{
