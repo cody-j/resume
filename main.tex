@@ -29,8 +29,8 @@
 % Commands
 \newcommand{\header}[1]{%
     \vspace{-0.3em}
-    {\tiny\section*{\small{#1}}\vspace{-2.5em}}
-    \hrulefill\vspace{0.7em}
+    {\tiny\section*{\small\normalfont\textit{#1}}\vspace{-2.5em}}
+    \hrulefill\vspace{0.9em}
 }
 
 \newcommand{\contact}{
@@ -46,9 +46,9 @@
 }
 
 \newcommand{\skillcolumn}[2]{%
-    \begin{minipage}{0.29\textwidth}
-        {\section*{\small\normalfont{#1}}\vspace{-2.0em}}
-        \hrulefill\vspace{0.7em}
+    \begin{minipage}[t]{0.29\textwidth}
+        {\section*{\large\textbf{#1}}\vspace{-2.0em}}
+        \hrulefill\vspace{0.3em}
         
         \begin{flushleft}
             {#2}
@@ -73,12 +73,12 @@
     ]{\tiny\color{#1!20!Black}\textbf{#2}}
 }
 
-\newcommand{\experience}[4]{%  % Title, Company, Date, Highlights
-    \textbf{\normalsize #1} {\small\textbar{}} \raisebox{0ex}{\small{#2}} \hfill \raisebox{0.1ex}{\small\textbf{#3}}%
-    \vspace{0.4em}%
+\newcommand{\experience}[5]{%  % Title, Company, Date, Highlights, Blurb
+    \textbf{\large #1} {\small\textbar{}} \raisebox{0ex}{\small{#2}} \hfill \raisebox{0.1ex}{\small\textbf{#3}}\\%
+    \vspace{0.1em}{#5}\vspace{0.4em}%
     \begin{adjustwidth}{0.3cm}{0.3cm}%
         \begin{itemize}[leftmargin=*, nosep]%
-            #4
+            {#4}
         \end{itemize}%
     \end{adjustwidth}%
     \vspace{1em}%
@@ -124,18 +124,34 @@
 % SKILLS
 \header{SKILLS}
 
-\noindent
 \skillcolumn{Frontend}{
-\pill[RoyalPurple!90!Black]{NODE}%
-\pill[RoyalPurple!90!Black]{PYTHON}%
+\pill[RoyalPurple!90!Black]{REACT}%
+\pill[RoyalPurple!90!Black]{VUE}%
+\pill[RoyalPurple!90!Black]{HTML5}%
+\pill[RoyalPurple!90!Black]{CSS3}%
 }\hfill%
 \skillcolumn{Backend + Data}{
 \pill[ForestGreen!40!Black]{NODE}%
+\pill[ForestGreen!40!Black]{TYPESCRIPT}%
+\pill[ForestGreen!40!Black]{EXPRESS}%
+\pill[ForestGreen!40!Black]{JAVASCRIPT}%
 \pill[ForestGreen!40!Black]{PYTHON}%
+\pill[ForestGreen!40!Black]{POSTGRES}%
+\pill[ForestGreen!40!Black]{REDIS}%
+\pill[ForestGreen!40!Black]{DBT}%
+\pill[ForestGreen!40!Black]{COUCHBASE}%
 }\hfill%
 \skillcolumn{Devops}{
-\pill[NavyBlue!90!Black]{NODE}%
-\pill[NavyBlue!90!Black]{PYTHON}%
+\pill[NavyBlue!90!Black]{GIT}%
+\pill[NavyBlue!90!Black]{PERFORCE}%
+\pill[NavyBlue!90!Black]{BASH}%
+\pill[NavyBlue!90!Black]{POWERSHELL}%
+\pill[NavyBlue!90!Black]{JENKINS}%
+\pill[NavyBlue!90!Black]{AWS}%
+\pill[NavyBlue!90!Black]{GCP}%
+\pill[NavyBlue!90!Black]{DOCKER}%
+\pill[NavyBlue!90!Black]{SERVERLESS}%
+\pill[NavyBlue!90!Black]{KUBERNETES}%
 }%
 
 
@@ -148,20 +164,20 @@
     \item Architected and implemented application infrastructure spanning AWS and Azure, including Lambda services, PostgreSQL databases, and Redis caching layer%
     \item Designed and built a Vue-based Excel Add-In to create and manage granular entities within a workbook%
     \item Integrated with Microsoft Entra and the Commercial Marketplace to handle authentication, authorization, and subscription state%
-}
+}{A component library for Excel built on modern array features}
 
 \experience{Lead Software Engineer}{Treez}{December 2021 - April 2024}{%
     \item Led development of our eventing system on top of Eventbridge and Kinesis, decoupling services in what had become a distributed monolith%
     \item Led development of enterprise ELT pipeline processing data from 400+ MySQL instances reducing report generation time by 90\%, enabling real-time business insights for our users%
     \item Implemented analytics platform on DBT + Quicksight reducing cogs by hundreds of thousands of dollars per year%
     \item Architected and implemented a Data Lake House on top of AWS primitives to support the analytics platform%
-}
+}{Enterprise retail and logistics platform managing 400+ distributed retail locations}
 
 \experience{Software Engineer}{Treez}{September 2020 - December 2021}{%
     \item Orchestrated migration from EC2 to Kubernetes enabling zero-downtime deployments%
     \item Optimized critical track-and-trace queries reducing latency in one case from +10s to <300ms%
     \item Integrated track-and-trace system with delivery partners enabling millions of dollars in new business%
-}
+}{Enterprise retail and logistics platform managing 400+ distributed retail locations}
 
 \newpage
 
@@ -171,19 +187,19 @@
 \experience{Software Engineer}{Electronic Arts}{January 2020 - September 2020}{%
     \item Enhanced build system to better handle a particular class of error, eliminating hundreds of lost man-hours over a week%
     \item Worked with game developers and game testers to facilitate proper output from Jenkins farm%
-}
+}{The game company}
 
 \experience{Software Engineer}{Indigo Ag}{January 2019 - December 2019}{%
     \item Agricultural intelligence platform combining satellite imagery with precision farming technology%
     \item Built React-based visualization platform connecting 100TB+ of satellite imagery data with agronomists%
     \item Developed ETL pipeline processing WKT data into vector tiles, integrated into Airflow processes%
-}
+}{Agricultural intelligence platform combining satellite imagery with precision farming technology}
 
 \experience{Software Engineer}{Control}{January 2017 - December 2018}{%
     \item Payment data studio with cross-platform aggregation%
     \item Implemented V2 of business intelligence platform processing \$500M+ in payment data from the four major providers%
     \item Implemented auto-scaling system to handle spikes in pipeline ingestion%
-}
+}{Payment data studio with cross-platform aggregation}
 
 % EDUCATION
 \header{EDUCATION}
