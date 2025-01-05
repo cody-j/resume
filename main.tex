@@ -75,15 +75,29 @@
     ]{\footnotesize\color{#1!20!Black}\textbf{#2}}
 }
 
-\newcommand{\experience}[5]{%  % Title, Company, Date, Highlights, Blurb
+\newcommand{\experience}[6]{%  % Title, Company, Date, Highlights, Blurb, Progress
     \textbf{\large #1} {\small\textbar{}} \raisebox{0ex}{\small{#2}} \hfill \raisebox{0.1ex}{\small\textbf{#3}}\\%
-    {\footnotesize{#5}}\vspace{0.4em}%
+    {\footnotesize{#5}}\vspace{0.4em}\hfill\raisebox{0.1em}{#6}%
     \begin{adjustwidth}{0.3cm}{0.3cm}%
         \begin{itemize}[leftmargin=*, nosep]%
             {#4}
         \end{itemize}%
     \end{adjustwidth}%
     \vspace{1em}%
+}
+
+\newcommand{\progressbar}[3]{%
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\width}{2}
+        \pgfmathsetmacro{\partOne}{(#1 / 100) * \width}
+        \pgfmathsetmacro{\partTwo}{\partOne + (#2 / 100) * \width}
+        \pgfmathsetmacro{\partThree}{\partTwo + (#3 / 100) * \width}
+        \raisebox{0.3em}{
+            \fill[RoyalPurple!90!Black!60] (0,0) rectangle (\partOne,0.08);
+            \fill[ForestGreen!90!Black!50] (\partOne,0) rectangle (\partTwo,0.08);
+            \fill[NavyBlue!90!Black!70] (\partTwo,0) rectangle (\width,0.08);
+        }
+    \end{tikzpicture}%
 }
 % End Commands
 
@@ -165,20 +179,23 @@
     \item Architected and implemented application infrastructure spanning AWS and Azure, including Lambda services, PostgreSQL databases, and Redis caching layer%
     \item Designed and built a Vue-based Excel Add-In to create and manage granular entities within a workbook%
     \item Integrated with Microsoft Entra and the Commercial Marketplace to handle authentication, authorization, and subscription state%
-}{A component library for Excel built on modern array features}
+}{A component library for Excel}%
+{\progressbar{33}{34}{33}}
 
 \experience{Lead Software Engineer}{Treez}{December 2021 - April 2024}{%
     \item Led development of our eventing system on top of Eventbridge and Kinesis, decoupling services in what had become a distributed monolith%
     \item Led development of enterprise ELT pipeline processing data from 400+ MySQL instances reducing report generation time by 90\%, enabling real-time business insights for our users%
     \item Implemented analytics platform on DBT + Quicksight reducing cogs by hundreds of thousands of dollars per year%
     \item Architected and implemented a Data Lake House on top of AWS primitives to support the analytics platform%
-}{Enterprise retail and logistics platform managing 400+ distributed retail locations}
+}{Enterprise retail and logistics platform}%
+{\progressbar{10}{55}{35}}
 
 \experience{Software Engineer}{Treez}{September 2020 - December 2021}{%
     \item Orchestrated migration from EC2 to Kubernetes enabling zero-downtime deployments%
     \item Optimized critical track-and-trace queries reducing latency in one case from +10s to <300ms%
     \item Integrated track-and-trace system with delivery partners enabling millions of dollars in new business%
-}{Enterprise retail and logistics platform managing 400+ distributed retail locations}
+}{Enterprise retail and logistics platform}%
+{\progressbar{20}{60}{20}}
 
 \newpage
 
@@ -188,19 +205,22 @@
 \experience{Software Engineer}{Electronic Arts}{January 2020 - September 2020}{%
     \item Enhanced build system to better handle a particular class of error, eliminating hundreds of lost man-hours over a week%
     \item Worked with game developers and game testers to facilitate proper output from Jenkins farm%
-}{The game company}
+}{The game company}%
+{\progressbar{0}{45}{55}}
 
 \experience{Software Engineer}{Indigo Ag}{January 2019 - December 2019}{%
     \item Agricultural intelligence platform combining satellite imagery with precision farming technology%
     \item Built React-based visualization platform connecting 100TB+ of satellite imagery data with agronomists%
     \item Developed ETL pipeline processing WKT data into vector tiles, integrated into Airflow processes%
-}{Agricultural intelligence platform combining satellite imagery with precision farming technology}
+}{Agricultural intelligence platform}%
+{\progressbar{60}{30}{10}}
 
 \experience{Software Engineer}{Control}{January 2017 - December 2018}{%
     \item Payment data studio with cross-platform aggregation%
     \item Implemented V2 of business intelligence platform processing \$500M+ in payment data from the four major providers%
     \item Implemented auto-scaling system to handle spikes in pipeline ingestion%
-}{Payment data studio with cross-platform aggregation}
+}{Payment data studio}%
+{\progressbar{70}{20}{10}}
 
 % EDUCATION
 \header{EDUCATION}
