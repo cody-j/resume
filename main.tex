@@ -36,11 +36,11 @@
 
 \newcommand{\contact}{
     \begin{center}
-    \faGlobe\ codyj.io% 
+    \faGlobe\ codyj.io%
     \hspace{1em}\textbar\hspace{1em}%
-    \faEnvelope\ codywj777@gmail.com% 
+    \faEnvelope\ codywj777@gmail.com%
     \hspace{1em}\textbar\hspace{1em}%
-    \faPhone\ (604) 802-6801% 
+    \faPhone\ (604) 802-6801%
     \hspace{1em}\textbar\hspace{1em}%
     \faGithub\ github.com/cody-j%
     \end{center}
@@ -110,9 +110,11 @@
 \begin{minipage}{0.3\textwidth}
     \begin{flushright}
         \begin{tikzpicture}
-            \draw[clip] (0,0) circle (1cm);
-            \fill[red] (1,0) circle (1cm);
-          \end{tikzpicture}
+            \begin{scope}
+                \clip[rounded corners=0.2cm] (-1.5,-1.5) rectangle (1.5,1.5);
+                \node[inner sep=0pt] at (0,0) {\includegraphics[height=3cm]{images/pfp.png}};
+            \end{scope}
+        \end{tikzpicture}
     \end{flushright}
 \end{minipage}
 
@@ -175,7 +177,7 @@
 
 \header{EXPERIENCE}
 
-\experience{Technical Founder}{Skoookum}{May 2021 - Present}{%        
+\experience{Technical Founder}{Skoookum}{May 2021 - Present}{%
     \item Architected and implemented application infrastructure spanning AWS and Azure, including Lambda services, PostgreSQL databases, and Redis caching layer%
     \item Designed and built a Vue-based Excel Add-In to create and manage granular entities within a workbook%
     \item Integrated with Microsoft Entra and the Commercial Marketplace to handle authentication, authorization, and subscription state%
